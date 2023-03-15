@@ -1,0 +1,11 @@
+    Scanner scan = new Scanner(System.in);
+    int idade = scan.nextInt();
+    
+    
+    if(idade >= 18){
+        System.out.println("parabens voce e maior de idade !! ");
+    }else{
+        System.out.println("voce e menor de idade");
+    }
+        
+    }
