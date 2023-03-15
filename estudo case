@@ -1,0 +1,13 @@
+        int ano = 2000;
+        switch(ano){
+            case 1000:
+                System.out.println("Muito velho");
+                break;
+                
+            case 2000:
+                System.out.println("milenais");
+                break;
+                
+            default:
+                System.out.println("Fim");
+        }
