@@ -1,0 +1,82 @@
+public class Pessoa {
+    
+    String nome;
+    int idade;
+    
+    public Pessoa(String nome, int idade){
+        this.nome = nome;
+        this.idade = idade;
+    }
+    public void nome(String nome){
+        this.nome = nome;
+    }
+    
+    public void idade(int idade){
+        this.idade = idade;
+    }
+    
+    public void fazerAniversario(){
+        this.idade++;
+        System.out.println("Parabens, " + this.nome + "agora você tem " + this.idade);
+    }
+    
+}
+
+
+public class Funcionario extends Pessoa {
+   
+    double salario;
+         
+        public Funcionario(String nome, int idade, double salario){
+            super(nome, idade);
+            this.salario = salario;
+            
+        }
+        
+        public void aumentarSalario(double percentual){
+            double aumento = this.salario * percentual / 100;
+            this.salario += aumento;
+            System.out.println("Parabens, " + this.nome + "seu salario aumentou em  " + percentual + "% seu salario agora é de R$: " + this.salario);
+            
+        }
+        
+        @Override
+        public void fazerAniversario(){
+            super.fazerAniversario();
+            if(this.idade % 5 == 0){
+                double bonus = this.salario * 0.1;
+                this.salario += bonus;
+                System.out.println("Parabens " + this.nome + "agora voce tem " + this.idade + "anos e ganhou um bonus de R$ " + bonus + ".");
+            }
+        }
+        
+        
+        
+    
+         
+     }
+     
+     
+     
+     public class Executavel {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        
+        
+       Funcionario funcionario1 =  new Funcionario("Pedro", 20, 2500.0);
+       funcionario1.fazerAniversario(); // Parabéns, João! Você agora tem 26 anos.
+       funcionario1.aumentarSalario(10);
+       funcionario1.fazerAniversario();
+       funcionario1.fazerAniversario();
+       funcionario1.fazerAniversario();
+       funcionario1.fazerAniversario();
+       funcionario1.fazerAniversario();
+       funcionario1.aumentarSalario(5);
+            
+        
+    }
+}
